@@ -30,11 +30,17 @@ const HomePage = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-    const data = await loadData();
+    try {
+        const data = await loadData();
 
-    return {
-        props: { data },
-    };
+        return {
+            props: { data },
+        };
+    } catch {
+        return {
+            props: { data: null },
+        };
+    }
 };
 
 export default HomePage;
