@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env
+
+# Netlify build
+out_functions/
+out_publish/
+

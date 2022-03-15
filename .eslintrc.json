@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ]
+}
