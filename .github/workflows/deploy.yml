@@ -1,13 +1,12 @@
 name: Deploy to Netlify
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types: [opened, synchronize, reopened]
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -28,7 +27,7 @@ jobs:
           node-version: '16'
 
       - name: 🧰 Install dependencies
-        run: npm run install
+        run: npm install
 
       - name: 📦 Build project
         run: npm run build --if-present
